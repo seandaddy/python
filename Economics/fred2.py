@@ -5,7 +5,7 @@ import plotly.express as px
 import time
 
 plt.style.use('fivethirtyeight')
-pd.set_option('display.max_columns', 500)
+pd.options.display.max_columns = 500
 color_pal = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 
 from fredapi import Fred
