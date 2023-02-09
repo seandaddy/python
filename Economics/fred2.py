@@ -9,9 +9,10 @@ pd.options.display.max_columns = 500
 color_pal = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 
 from fredapi import Fred
+from GetAPI import get_keys
 
-fred_key = '31337132a12d6f8dbf3126692ac97e3b'
-
+secrets = get_keys('~/.secret/api-key.json')
+fred_key = secrets['fred-api']
 fred = Fred(api_key=fred_key)
 
 unemp_df = fred.search('unemployment rate state', filter=('frequency','Monthly'))
