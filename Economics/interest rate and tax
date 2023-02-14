@@ -1,0 +1,49 @@
+import numpy as np
+from scipy.optimize import minimize
+
+# Parameters
+z1 = 12
+z2 = 10
+b_bar_num = -1  # borrow up to 1 dollar
+
+# Vector of 3 betas
+beta_vec = [0.75, 0.85, 0.95]
+
+# Vector of interest rates
+r_vec = np.linspace(0.6, 1.40, 100)
+
+# What we had from before to use fmincon
+A = [-1]
+q = -b_bar_num
+b0 = [0]  # starting value to search for optimal choice
+
+# A vector to store optimal choices
+rows = len(r_vec)
+cols = len(beta_vec)
+b0 = np.array([0])
+b_opti_mat = np.zeros((rows, cols))
+
+# Solving for optimal choices as we change Z2
+for j in range(len(beta_vec)):
+    for i in range(len(r_vec)):
+        U_neg = lambda x: -1 * (np.log(z1 - x[0]) + beta_vec[j] * np.log(z2 + x[0] * r_vec[i]))
+        res = minimize(U_neg, b0, method='BFGS', options={'disp': False})
+        x_opti = res.x[0]
+        b_opti_mat[i, j] = x_opti
+
+# Plot Results
+import matplotlib.pyplot as plt
+
+legendCell = [f'β={beta:.2f}' for beta in beta_vec]
+plt.figure()
+# Individual Demands at different Interest Rate Points
+plt.plot(r_vec, b_opti_mat)
+plt.ylim([-1.1, 1])
+plt.xlim([min(r_vec), max(r_vec)])
+plt.plot(r_vec, np.ones_like(r_vec) * 0, 'k-.')
+plt.grid(True)
+plt.title('Individual Borrowing/Savings')
+plt.ylabel('Optimal Savings Choice')
+plt.xlabel('interest rate')
+plt.legend(legendCell, loc='upper left')
+plt.show()
