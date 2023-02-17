@@ -12,6 +12,7 @@ secrets = get_keys('~/.secret/api-key.json')
 fred_key = secrets['fred-api']
 fred = Fred(api_key=fred_key)
 
+fred = Fred(api_key=fred_key)
 sp_search = fred.search('S&P', order_by='popularity')
 sp500 = fred.get_series(series_id='SP500')
 sp500.plot(figsize=(10, 5), title='S&P 500', lw=2)
