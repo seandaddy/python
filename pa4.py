@@ -1,6 +1,6 @@
-import os
+# import os
 import pandas as pd
-import numpy as np
+# import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
