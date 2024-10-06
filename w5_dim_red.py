@@ -1,3 +1,5 @@
+# %%
+import os
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
@@ -5,16 +7,18 @@ from sklearn.decomposition import PCA, KernelPCA, TruncatedSVD, NMF, FastICA
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.manifold import TSNE, Isomap, LocallyLinearEmbedding
 from umap import UMAP
-from sklearn.datasets import make_swiss_roll
 import matplotlib.pyplot as plt
 
+# %%
 # Loading the history data
 df = pd.read_csv("~/Documents/python/data/DAAN545_Seshat.csv")
 
+# %%
 # Normalize
 scaler = StandardScaler()
 data = pd.DataFrame(scaler.fit_transform(df.iloc[:, 3:]), columns=df.columns[3:])
 
+# %%
 # Try different dimension reduction techniques and visualize in 2D
 fig, axes = plt.subplots(2, 3, figsize=(15, 10))
 
@@ -74,3 +78,4 @@ axes[1, 2].scatter(lda_data["PC1"], lda_data["PC2"], c=lda_data["Time"])
 axes[1, 2].set_title("LDA")
 
 plt.show()
+# %%
