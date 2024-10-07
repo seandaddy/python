@@ -45,4 +45,3 @@ if response.status_code == 200:
 
 else:
     print(f"Failed to download {output_filename}. Status code: {response.status_code}")
-

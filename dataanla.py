@@ -6,7 +6,7 @@ df=pd.read_csv("StudentsPerformance.csv")
 df.head()
 
 plt.style.use('dark_background')
-sns.set(style="darkgrid",palette="bright", font_scale=1.5)
+sns.set_theme(style="darkgrid",palette="bright", font_scale=1.5)
 sns.pairplot(df[['math score','reading score','writing score']], height=4)
 
 def average_score(dt): return (dt['math score']+dt['reading score']+dt['writing score'])/3
