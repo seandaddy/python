@@ -14,17 +14,14 @@ from statsmodels.discrete.discrete_model import Logit
 from statsmodels.iolib.summary2 import summary_col
 from sklearn.linear_model import LogisticRegression
 
-
 # %%
 df = pd.read_stata('/Users/eer/Documents/python/data/DAAN545_GlassCliff.dta')
-df.head()
-# %%
-df.describe()
+with pd.option_context('display.max_columns', 40):
+    df.describe()
 
 # %%
 y = df['female']
 dummies = pd.get_dummies(df[['year_begin','sich_2digits_group']].astype(int).astype(str), drop_first=True)
-dummies
 
 # %%
 # List of related variables
