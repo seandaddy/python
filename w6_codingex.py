@@ -1,4 +1,9 @@
 # %%
+import tensorflow as tf
+with tf.device('/device:GPU:0'):
+    pass
+
+# %%
 import os
 import pandas as pd
 import numpy as np
@@ -8,6 +13,7 @@ from statsmodels.tools.tools import add_constant
 from statsmodels.discrete.discrete_model import Logit
 from statsmodels.iolib.summary2 import summary_col
 from sklearn.linear_model import LogisticRegression
+
 
 # %%
 df = pd.read_stata('/Users/eer/Documents/python/data/DAAN545_GlassCliff.dta')
