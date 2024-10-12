@@ -11,12 +11,19 @@ from scipy import stats
 gravity = pd.read_csv("~/Documents/python/data/gravity80.csv")
 # gravity = gravity[gravity['year']>1990]
 df = gravity
-df["trade"] = df["tradeflow_comtrade_o"] + df["tradeflow_comtrade_d"]
-df["tradeflow"] = df["tradeflow_comtrade_o"]
-# df['rhsg'] = (df['gdp_o'] * df['gdp_d'])/ (df['dist'])**2
-df["gatt"] = df["gatt_o"] * df["gatt_d"]
-df["wto"] = df["wto_o"] * df["wto_d"]
-df["eu"] = df["eu_o"] * df["eu_d"]
+df = df.assign(
+    trade=df["tradeflow_comtrade_o"] + df["tradeflow_comtrade_d"],
+    tradeflow=df["tradeflow_comtrade_o"],
+    gatt=df["gatt_o"] * df["gatt_d"],
+    wto=df["wto_o"] * df["wto_d"],
+    eu=df["eu_o"] * df["eu_d"],
+)
+
+# Apply logarithms in one go using np.log for multiple columns
+df[["log_trade", "log_tradeflow", "log_gdp_o", "log_gdp_d", "log_dist"]] = np.log(
+    df[["trade", "tradeflow", "gdp_o", "gdp_d", "dist"]]
+)
+
 df = df.drop(
     columns=[
         "gatt_o",
@@ -29,13 +36,6 @@ df = df.drop(
         "tradeflow_comtrade_d",
     ]
 )
-# df = df.drop(columns=['dist', 'gatt_o', 'gatt_d', 'wto_o', 'wto_d', 'eu_o', 'eu_d', 'gdp_o', 'gdp_d', 'tradeflow_comtrade_o', 'tradeflow_comtrade_d'])
-df["log_trade"] = np.log(df["trade"])
-df["log_tradeflow"] = np.log(df["tradeflow"])
-df["log_gdp_o"] = np.log(df["gdp_o"])
-df["log_gdp_d"] = np.log(df["gdp_d"])
-df["log_dist"] = np.log(df["dist"])
-df.head()
 
 # %%
 year = pd.Categorical(df["year"])
@@ -116,3 +116,73 @@ if p_value < 0.05:
     print("Reject null hypothesis: Fixed effects model is preferred.")
 else:
     print("Fail to reject null hypothesis: Random effects model is preferred.")
+
+gravity = pd.read_csv("~/Documents/python/data/gravity80.csv")
+# gravity = gravity[gravity['year']>1990]
+df = gravity
+df = df.assign(
+    trade=df["tradeflow_comtrade_o"] + df["tradeflow_comtrade_d"],
+    tradeflow=df["tradeflow_comtrade_o"],
+    gatt=df["gatt_o"] * df["gatt_d"],
+    wto=df["wto_o"] * df["wto_d"],
+    eu=df["eu_o"] * df["eu_d"],
+)
+
+# Apply logarithms in one go using np.log for multiple columns
+df[["log_trade", "log_tradeflow", "log_gdp_o", "log_gdp_d", "log_dist"]] = np.log(
+    df[["trade", "tradeflow", "gdp_o", "gdp_d", "dist"]]
+)
+
+model_ols = smf.ols("log_tradeflow ~ log_gdp_o", data=df).fit(
+    cov_type="HC3"
+)  # HC3 gives robust standard errors
+print(model_ols.summary())
+
+# 2. OLS with country fixed effects and clustered standard errors
+model_ols_fe = smf.ols("log_tradeflow ~ log_gdp_o + C(iso3_o)", data=df).fit(
+    cov_type="cluster", cov_kwds={"groups": df["iso3_o"]}
+)
+print(model_ols_fe.summary())
+
+# 3. Predicted values
+df["log_tradeflow_hat"] = model_ols_fe.predict(df)
+
+# 4. Separate predictions by country
+countries = df["iso3_o"].unique()
+country_preds = {
+    country: df[df["iso3_o"] == country]["log_tradeflow_hat"] for country in countries
+}
+
+# 5. Plot the results
+plt.figure(figsize=(10, 6))
+
+# First group (1-99 countries)
+for country in countries[:99]:
+    plt.plot(
+        df[df["iso3_o"] == country]["log_gdp_o"],
+        country_preds[country],
+        label=f"{country}",
+        color="blue",
+        alpha=0.5,
+    )
+
+# Second group (100-126 countries)
+for country in countries[99:]:
+    plt.plot(
+        df[df["iso3_o"] == country]["log_gdp_o"],
+        country_preds[country],
+        label=f"{country}",
+        color="green",
+        alpha=0.5,
+    )
+
+# Add a linear fit line
+plt.plot(
+    df["log_gdp_o"], model_ols.predict(df), color="red", linewidth=2, label="Linear Fit"
+)
+
+# Final plot settings
+plt.xlabel("Logarithm of GDP")
+plt.ylabel("Predicted Logarithm of Trade Flow")
+plt.title("OLS with and without Fixed Effects by Country")
+plt.show()
