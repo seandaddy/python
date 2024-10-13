@@ -1,0 +1,238 @@
+\documentclass{article}
+\usepackage{booktabs}
+\begin{document}
+\section*{Pooled OLS Results}
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &   log\_tradeflow   & \textbf{  R-squared:         }   &      0.8048      \\
+\textbf{Estimator:}        &     PooledOLS      & \textbf{  R-squared (Between):}  &      0.9066      \\
+\textbf{No. Observations:} &       83773        & \textbf{  R-squared (Within):}   &      0.7768      \\
+\textbf{Date:}             &  Sat, Oct 12 2024  & \textbf{  R-squared (Overall):}  &      0.8048      \\
+\textbf{Time:}             &      19:57:50      & \textbf{  Log-likelihood     }   &    -1.521e+05    \\
+\textbf{Cov. Estimator:}   &     Unadjusted     & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{  F-statistic:       }   &    5.756e+04     \\
+\textbf{Entities:}         &         28         & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Avg Obs:}          &       2991.9       & \textbf{  Distribution:      }   &    F(6,83766)    \\
+\textbf{Min Obs:}          &       1055.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       3884.0       & \textbf{  F-statistic (robust):} &    5.756e+04     \\
+\textbf{}                  &                    & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Time periods:}     &         25         & \textbf{  Distribution:      }   &    F(6,83766)    \\
+\textbf{Avg Obs:}          &       3350.9       & \textbf{                     }   &                  \\
+\textbf{Min Obs:}          &       1812.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       4424.0       & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{                     }   &                  \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                     & \textbf{Parameter} & \textbf{Std. Err.} & \textbf{T-stat} & \textbf{P-value} & \textbf{Lower CI} & \textbf{Upper CI}  \\
+\midrule
+\textbf{const}       &      -18.838       &       0.1031       &     -182.65     &      0.0000      &      -19.040      &      -18.636       \\
+\textbf{log\_gdp\_o} &       1.1776       &       0.0034       &      342.28     &      0.0000      &       1.1709      &       1.1844       \\
+\textbf{log\_gdp\_d} &       0.9420       &       0.0025       &      382.21     &      0.0000      &       0.9372      &       0.9469       \\
+\textbf{log\_dist}   &      -1.2510       &       0.0076       &     -164.82     &      0.0000      &      -1.2659      &      -1.2361       \\
+\textbf{wto}         &       0.2062       &       0.0158       &      13.069     &      0.0000      &       0.1753      &       0.2372       \\
+\textbf{eu}          &       0.1840       &       0.0196       &      9.3737     &      0.0000      &       0.1455      &       0.2225       \\
+\textbf{fta\_wto}    &      -0.1253       &       0.0136       &     -9.2183     &      0.0000      &      -0.1520      &      -0.0987       \\
+\bottomrule
+\end{tabular}
+%\caption{PooledOLS Estimation Summary}
+\end{center}\section*{Random Effects Results}
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &   log\_tradeflow   & \textbf{  R-squared:         }   &      0.7895      \\
+\textbf{Estimator:}        &   RandomEffects    & \textbf{  R-squared (Between):}  &     -0.5254      \\
+\textbf{No. Observations:} &       83773        & \textbf{  R-squared (Within):}   &      0.7910      \\
+\textbf{Date:}             &  Sat, Oct 12 2024  & \textbf{  R-squared (Overall):}  &      0.5157      \\
+\textbf{Time:}             &      19:57:52      & \textbf{  Log-likelihood     }   &    -1.457e+05    \\
+\textbf{Cov. Estimator:}   &     Unadjusted     & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{  F-statistic:       }   &    5.235e+04     \\
+\textbf{Entities:}         &         28         & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Avg Obs:}          &       2991.9       & \textbf{  Distribution:      }   &    F(6,83766)    \\
+\textbf{Min Obs:}          &       1055.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       3884.0       & \textbf{  F-statistic (robust):} &    5.238e+04     \\
+\textbf{}                  &                    & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Time periods:}     &         25         & \textbf{  Distribution:      }   &    F(6,83766)    \\
+\textbf{Avg Obs:}          &       3350.9       & \textbf{                     }   &                  \\
+\textbf{Min Obs:}          &       1812.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       4424.0       & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{                     }   &                  \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                     & \textbf{Parameter} & \textbf{Std. Err.} & \textbf{T-stat} & \textbf{P-value} & \textbf{Lower CI} & \textbf{Upper CI}  \\
+\midrule
+\textbf{const}       &       2.5318       &       0.3204       &      7.9021     &      0.0000      &       1.9038      &       3.1598       \\
+\textbf{log\_gdp\_o} &       0.0148       &       0.0165       &      0.9009     &      0.3676      &      -0.0175      &       0.0471       \\
+\textbf{log\_gdp\_d} &       0.9698       &       0.0023       &      420.14     &      0.0000      &       0.9653      &       0.9743       \\
+\textbf{log\_dist}   &      -1.2343       &       0.0071       &     -173.74     &      0.0000      &      -1.2482      &      -1.2203       \\
+\textbf{wto}         &       0.2821       &       0.0147       &      19.244     &      0.0000      &       0.2534      &       0.3108       \\
+\textbf{eu}          &       0.1706       &       0.0182       &      9.3588     &      0.0000      &       0.1348      &       0.2063       \\
+\textbf{fta\_wto}    &      -0.0611       &       0.0128       &     -4.7783     &      0.0000      &      -0.0862      &      -0.0360       \\
+\bottomrule
+\end{tabular}
+%\caption{RandomEffects Estimation Summary}
+\end{center}\section*{Between OLS Results}
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &   log\_tradeflow   & \textbf{  R-squared:         }   &      0.9517      \\
+\textbf{Estimator:}        &     BetweenOLS     & \textbf{  R-squared (Between):}  &      0.9517      \\
+\textbf{No. Observations:} &         28         & \textbf{  R-squared (Within):}   &     -47.544      \\
+\textbf{Date:}             &  Sat, Oct 12 2024  & \textbf{  R-squared (Overall):}  &     -37.654      \\
+\textbf{Time:}             &      19:57:55      & \textbf{  Log-likelihood     }   &     -9.2703      \\
+\textbf{Cov. Estimator:}   &     Unadjusted     & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{  F-statistic:       }   &      68.930      \\
+\textbf{Entities:}         &         28         & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Avg Obs:}          &       2991.9       & \textbf{  Distribution:      }   &     F(6,21)      \\
+\textbf{Min Obs:}          &       1055.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       3884.0       & \textbf{  F-statistic (robust):} &      68.930      \\
+\textbf{}                  &                    & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Time periods:}     &         25         & \textbf{  Distribution:      }   &     F(6,21)      \\
+\textbf{Avg Obs:}          &       3350.9       & \textbf{                     }   &                  \\
+\textbf{Min Obs:}          &       1812.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       4424.0       & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{                     }   &                  \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                     & \textbf{Parameter} & \textbf{Std. Err.} & \textbf{T-stat} & \textbf{P-value} & \textbf{Lower CI} & \textbf{Upper CI}  \\
+\midrule
+\textbf{const}       &       72.985       &       37.379       &      1.9526     &      0.0643      &      -4.7480      &       150.72       \\
+\textbf{log\_gdp\_o} &       0.9269       &       0.1170       &      7.9208     &      0.0000      &       0.6836      &       1.1703       \\
+\textbf{log\_gdp\_d} &      -4.2878       &       2.3259       &     -1.8435     &      0.0794      &      -9.1249      &       0.5492       \\
+\textbf{log\_dist}   &      -1.7683       &       1.2799       &     -1.3815     &      0.1816      &      -4.4301      &       0.8935       \\
+\textbf{wto}         &      -0.4189       &       12.507       &     -0.0335     &      0.9736      &      -26.428      &       25.590       \\
+\textbf{eu}          &       57.785       &       26.251       &      2.2012     &      0.0390      &       3.1921      &       112.38       \\
+\textbf{fta\_wto}    &       0.6303       &       1.2504       &      0.5040     &      0.6195      &      -1.9701      &       3.2306       \\
+\bottomrule
+\end{tabular}
+%\caption{BetweenOLS Estimation Summary}
+\end{center}\section*{Fixed Effects Results}
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &   log\_tradeflow   & \textbf{  R-squared:         }   &      0.7912      \\
+\textbf{Estimator:}        &      PanelOLS      & \textbf{  R-squared (Between):}  &     -1.0193      \\
+\textbf{No. Observations:} &       83773        & \textbf{  R-squared (Within):}   &      0.7912      \\
+\textbf{Date:}             &  Sat, Oct 12 2024  & \textbf{  R-squared (Overall):}  &      0.4544      \\
+\textbf{Time:}             &      19:57:57      & \textbf{  Log-likelihood     }   &    -1.454e+05    \\
+\textbf{Cov. Estimator:}   &     Unadjusted     & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{  F-statistic:       }   &    5.288e+04     \\
+\textbf{Entities:}         &         28         & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Avg Obs:}          &       2991.9       & \textbf{  Distribution:      }   &    F(6,83739)    \\
+\textbf{Min Obs:}          &       1055.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       3884.0       & \textbf{  F-statistic (robust):} &    5.288e+04     \\
+\textbf{}                  &                    & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Time periods:}     &         25         & \textbf{  Distribution:      }   &    F(6,83739)    \\
+\textbf{Avg Obs:}          &       3350.9       & \textbf{                     }   &                  \\
+\textbf{Min Obs:}          &       1812.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       4424.0       & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{                     }   &                  \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                     & \textbf{Parameter} & \textbf{Std. Err.} & \textbf{T-stat} & \textbf{P-value} & \textbf{Lower CI} & \textbf{Upper CI}  \\
+\midrule
+\textbf{const}       &       5.8831       &       0.3342       &      17.606     &      0.0000      &       5.2282      &       6.5380       \\
+\textbf{log\_gdp\_o} &      -0.1413       &       0.0174       &     -8.1046     &      0.0000      &      -0.1754      &      -0.1071       \\
+\textbf{log\_gdp\_d} &       0.9728       &       0.0023       &      422.73     &      0.0000      &       0.9683      &       0.9773       \\
+\textbf{log\_dist}   &      -1.2291       &       0.0071       &     -173.67     &      0.0000      &      -1.2429      &      -1.2152       \\
+\textbf{wto}         &       0.2891       &       0.0146       &      19.800     &      0.0000      &       0.2605      &       0.3177       \\
+\textbf{eu}          &       0.1697       &       0.0181       &      9.3492     &      0.0000      &       0.1341      &       0.2052       \\
+\textbf{fta\_wto}    &      -0.0471       &       0.0127       &     -3.6978     &      0.0002      &      -0.0721      &      -0.0221       \\
+\bottomrule
+\end{tabular}
+%\caption{PanelOLS Estimation Summary}
+\end{center}
+
+F-test for Poolability: 540.52 \newline
+ P-value: 0.0000 \newline
+ Distribution: F(27,83739) \newline
+  \newline
+ Included effects: Entity\section*{Fixed Effects with Time Effects Results}
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &   log\_tradeflow   & \textbf{  R-squared:         }   &      0.7897      \\
+\textbf{Estimator:}        &      PanelOLS      & \textbf{  R-squared (Between):}  &      0.1947      \\
+\textbf{No. Observations:} &       83773        & \textbf{  R-squared (Within):}   &      0.7886      \\
+\textbf{Date:}             &  Sat, Oct 12 2024  & \textbf{  R-squared (Overall):}  &      0.6818      \\
+\textbf{Time:}             &      19:58:01      & \textbf{  Log-likelihood     }   &    -1.452e+05    \\
+\textbf{Cov. Estimator:}   &     Unadjusted     & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{  F-statistic:       }   &    5.239e+04     \\
+\textbf{Entities:}         &         28         & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Avg Obs:}          &       2991.9       & \textbf{  Distribution:      }   &    F(6,83715)    \\
+\textbf{Min Obs:}          &       1055.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       3884.0       & \textbf{  F-statistic (robust):} &    5.239e+04     \\
+\textbf{}                  &                    & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Time periods:}     &         25         & \textbf{  Distribution:      }   &    F(6,83715)    \\
+\textbf{Avg Obs:}          &       3350.9       & \textbf{                     }   &                  \\
+\textbf{Min Obs:}          &       1812.0       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       4424.0       & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{                     }   &                  \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                     & \textbf{Parameter} & \textbf{Std. Err.} & \textbf{T-stat} & \textbf{P-value} & \textbf{Lower CI} & \textbf{Upper CI}  \\
+\midrule
+\textbf{const}       &      -4.6798       &       0.8872       &     -5.2751     &      0.0000      &      -6.4186      &      -2.9410       \\
+\textbf{log\_gdp\_o} &       0.4005       &       0.0456       &      8.7751     &      0.0000      &       0.3111      &       0.4900       \\
+\textbf{log\_gdp\_d} &       0.9745       &       0.0023       &      422.84     &      0.0000      &       0.9699      &       0.9790       \\
+\textbf{log\_dist}   &      -1.2247       &       0.0071       &     -173.03     &      0.0000      &      -1.2386      &      -1.2109       \\
+\textbf{wto}         &       0.2917       &       0.0146       &      19.957     &      0.0000      &       0.2630      &       0.3203       \\
+\textbf{eu}          &       0.1738       &       0.0182       &      9.5719     &      0.0000      &       0.1382      &       0.2094       \\
+\textbf{fta\_wto}    &      -0.0388       &       0.0129       &     -3.0139     &      0.0026      &      -0.0640      &      -0.0136       \\
+\bottomrule
+\end{tabular}
+%\caption{PanelOLS Estimation Summary}
+\end{center}
+
+F-test for Poolability: 292.94 \newline
+ P-value: 0.0000 \newline
+ Distribution: F(51,83715) \newline
+  \newline
+ Included effects: Entity, Time\section*{Model Comparison}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+                                 &    \textbf{FE}    &    \textbf{RE}    &  \textbf{Pooled}   \\
+\midrule
+\textbf{Dep. Variable}           &   log\_tradeflow  &   log\_tradeflow  &   log\_tradeflow   \\
+\textbf{Estimator}               &      PanelOLS     &   RandomEffects   &     PooledOLS      \\
+\textbf{No. Observations}        &       83773       &       83773       &       83773        \\
+\textbf{Cov. Est.}               &     Unadjusted    &     Unadjusted    &     Unadjusted     \\
+\textbf{R-squared}               &       0.7912      &       0.7895      &       0.8048       \\
+\textbf{R-Squared (Within)}      &       0.7912      &       0.7910      &       0.7768       \\
+\textbf{R-Squared (Between)}     &      -1.0193      &      -0.5254      &       0.9066       \\
+\textbf{R-Squared (Overall)}     &       0.4544      &       0.5157      &       0.8048       \\
+\textbf{F-statistic}             &     5.288e+04     &     5.235e+04     &     5.756e+04      \\
+\textbf{P-value (F-stat)}        &       0.0000      &       0.0000      &       0.0000       \\
+\textbf{=====================}   &  ===============  &  ===============  &  ===============   \\
+\textbf{const}                   &       5.8831      &       2.5318      &      -18.838       \\
+\textbf{ }                       &      (17.606)     &      (7.9021)     &     (-182.65)      \\
+\textbf{log\_gdp\_o}             &      -0.1413      &       0.0148      &       1.1776       \\
+\textbf{ }                       &     (-8.1046)     &      (0.9009)     &      (342.28)      \\
+\textbf{log\_gdp\_d}             &       0.9728      &       0.9698      &       0.9420       \\
+\textbf{ }                       &      (422.73)     &      (420.14)     &      (382.21)      \\
+\textbf{log\_dist}               &      -1.2291      &      -1.2343      &      -1.2510       \\
+\textbf{ }                       &     (-173.67)     &     (-173.74)     &     (-164.82)      \\
+\textbf{wto}                     &       0.2891      &       0.2821      &       0.2062       \\
+\textbf{ }                       &      (19.800)     &      (19.244)     &      (13.069)      \\
+\textbf{eu}                      &       0.1697      &       0.1706      &       0.1840       \\
+\textbf{ }                       &      (9.3492)     &      (9.3588)     &      (9.3737)      \\
+\textbf{fta\_wto}                &      -0.0471      &      -0.0611      &      -0.1253       \\
+\textbf{ }                       &     (-3.6978)     &     (-4.7783)     &     (-9.2183)      \\
+\textbf{=======================} & ================= & ================= & =================  \\
+\textbf{Effects}                 &       Entity      &                   &                    \\
+\bottomrule
+\end{tabular}
+%\caption{Model Comparison}
+\end{center}
+
+T-stats reported in parentheses\section*{Hausman Test Results}
+Hausman test statistic: 753.9088\\
+p-value: 0.0000\\
+Reject null hypothesis: Fixed effects model is preferred.
+\end{document}

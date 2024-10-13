@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage{booktabs}
+\begin{document}
+\section*{Pooled OLS Results}
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &        sem         & \textbf{  R-squared:         }   &      0.8354      \\
+\textbf{Estimator:}        &     PooledOLS      & \textbf{  R-squared (Between):}  &      0.8689      \\
+\textbf{No. Observations:} &        1103        & \textbf{  R-squared (Within):}   &      0.2481      \\
+\textbf{Date:}             &  Sun, Oct 13 2024  & \textbf{  R-squared (Overall):}  &      0.8354      \\
+\textbf{Time:}             &      00:50:30      & \textbf{  Log-likelihood     }   &     -654.77      \\
+\textbf{Cov. Estimator:}   &     Unadjusted     & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{  F-statistic:       }   &      554.26      \\
+\textbf{Entities:}         &        143         & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Avg Obs:}          &       7.7133       & \textbf{  Distribution:      }   &    F(10,1092)    \\
+\textbf{Min Obs:}          &       3.0000       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       8.0000       & \textbf{  F-statistic (robust):} &      554.26      \\
+\textbf{}                  &                    & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Time periods:}     &         8          & \textbf{  Distribution:      }   &    F(10,1092)    \\
+\textbf{Avg Obs:}          &       137.88       & \textbf{                     }   &                  \\
+\textbf{Min Obs:}          &       132.00       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       141.00       & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{                     }   &                  \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                 & \textbf{Parameter} & \textbf{Std. Err.} & \textbf{T-stat} & \textbf{P-value} & \textbf{Lower CI} & \textbf{Upper CI}  \\
+\midrule
+\textbf{const}   &      -3.7731       &       0.6852       &     -5.5065     &      0.0000      &      -5.1176      &      -2.4286       \\
+\textbf{TC}      &      -0.0056       &       0.0015       &     -3.6404     &      0.0003      &      -0.0087      &      -0.0026       \\
+\textbf{TTS}     &      -0.0065       &       0.0040       &     -1.6255     &      0.1043      &      -0.0143      &       0.0013       \\
+\textbf{GDP}     &       0.5463       &       0.0411       &      13.298     &      0.0000      &       0.4657      &       0.6270       \\
+\textbf{DIS}     &      -0.5068       &       0.0642       &     -7.8895     &      0.0000      &      -0.6329      &      -0.3808       \\
+\textbf{POP}     &       0.5562       &       0.0472       &      11.784     &      0.0000      &       0.4636      &       0.6488       \\
+\textbf{open}    &       0.2462       &       0.0285       &      8.6531     &      0.0000      &       0.1904      &       0.3020       \\
+\textbf{science} &       2.0881       &       0.1584       &      13.180     &      0.0000      &       1.7773      &       2.3990       \\
+\textbf{WGI}     &       0.1410       &       0.0299       &      4.7231     &      0.0000      &       0.0824      &       0.1996       \\
+\textbf{patent}  &       0.6643       &       0.1179       &      5.6331     &      0.0000      &       0.4329      &       0.8956       \\
+\textbf{RTA}     &       0.1661       &       0.0393       &      4.2297     &      0.0000      &       0.0890      &       0.2431       \\
+\bottomrule
+\end{tabular}
+%\caption{PooledOLS Estimation Summary}
+\end{center}\section*{Random Effects Results}
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &        sem         & \textbf{  R-squared:         }   &      0.5289      \\
+\textbf{Estimator:}        &   RandomEffects    & \textbf{  R-squared (Between):}  &      0.8450      \\
+\textbf{No. Observations:} &        1103        & \textbf{  R-squared (Within):}   &      0.3579      \\
+\textbf{Date:}             &  Sun, Oct 13 2024  & \textbf{  R-squared (Overall):}  &      0.8151      \\
+\textbf{Time:}             &      00:50:30      & \textbf{  Log-likelihood     }   &      162.01      \\
+\textbf{Cov. Estimator:}   &     Unadjusted     & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{  F-statistic:       }   &      122.61      \\
+\textbf{Entities:}         &        143         & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Avg Obs:}          &       7.7133       & \textbf{  Distribution:      }   &    F(10,1092)    \\
+\textbf{Min Obs:}          &       3.0000       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       8.0000       & \textbf{  F-statistic (robust):} &      134.23      \\
+\textbf{}                  &                    & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Time periods:}     &         8          & \textbf{  Distribution:      }   &    F(10,1092)    \\
+\textbf{Avg Obs:}          &       137.88       & \textbf{                     }   &                  \\
+\textbf{Min Obs:}          &       132.00       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       141.00       & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{                     }   &                  \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                 & \textbf{Parameter} & \textbf{Std. Err.} & \textbf{T-stat} & \textbf{P-value} & \textbf{Lower CI} & \textbf{Upper CI}  \\
+\midrule
+\textbf{const}   &      -2.4339       &       0.8566       &     -2.8415     &      0.0046      &      -4.1146      &      -0.7532       \\
+\textbf{TC}      &      -0.0054       &       0.0007       &     -7.2164     &      0.0000      &      -0.0069      &      -0.0039       \\
+\textbf{TTS}     &      -0.0059       &       0.0019       &     -3.0882     &      0.0021      &      -0.0096      &      -0.0021       \\
+\textbf{GDP}     &       0.5402       &       0.0712       &      7.5859     &      0.0000      &       0.4005      &       0.6799       \\
+\textbf{DIS}     &      -0.7291       &       0.1601       &     -4.5547     &      0.0000      &      -1.0432      &      -0.4150       \\
+\textbf{POP}     &       0.5408       &       0.0855       &      6.3255     &      0.0000      &       0.3730      &       0.7085       \\
+\textbf{open}    &       0.1929       &       0.0363       &      5.3137     &      0.0000      &       0.1217      &       0.2642       \\
+\textbf{science} &       0.4464       &       0.1432       &      3.1182     &      0.0019      &       0.1655      &       0.7273       \\
+\textbf{WGI}     &       0.2266       &       0.0509       &      4.4550     &      0.0000      &       0.1268      &       0.3263       \\
+\textbf{patent}  &       0.6417       &       0.0573       &      11.201     &      0.0000      &       0.5293      &       0.7542       \\
+\textbf{RTA}     &       0.2682       &       0.0990       &      2.7086     &      0.0069      &       0.0739      &       0.4626       \\
+\bottomrule
+\end{tabular}
+%\caption{RandomEffects Estimation Summary}
+\end{center}\section*{Fixed Effects resultsults}
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}    &        sem         & \textbf{  R-squared:         }   &      0.3921      \\
+\textbf{Estimator:}        &      PanelOLS      & \textbf{  R-squared (Between):}  &     -6.2306      \\
+\textbf{No. Observations:} &        1103        & \textbf{  R-squared (Within):}   &      0.3921      \\
+\textbf{Date:}             &  Sun, Oct 13 2024  & \textbf{  R-squared (Overall):}  &     -5.6299      \\
+\textbf{Time:}             &      00:50:30      & \textbf{  Log-likelihood     }   &      273.88      \\
+\textbf{Cov. Estimator:}   &     Unadjusted     & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{  F-statistic:       }   &      76.751      \\
+\textbf{Entities:}         &        143         & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Avg Obs:}          &       7.7133       & \textbf{  Distribution:      }   &     F(8,952)     \\
+\textbf{Min Obs:}          &       3.0000       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       8.0000       & \textbf{  F-statistic (robust):} &      76.751      \\
+\textbf{}                  &                    & \textbf{  P-value            }   &      0.0000      \\
+\textbf{Time periods:}     &         8          & \textbf{  Distribution:      }   &     F(8,952)     \\
+\textbf{Avg Obs:}          &       137.88       & \textbf{                     }   &                  \\
+\textbf{Min Obs:}          &       132.00       & \textbf{                     }   &                  \\
+\textbf{Max Obs:}          &       141.00       & \textbf{                     }   &                  \\
+\textbf{}                  &                    & \textbf{                     }   &                  \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                 & \textbf{Parameter} & \textbf{Std. Err.} & \textbf{T-stat} & \textbf{P-value} & \textbf{Lower CI} & \textbf{Upper CI}  \\
+\midrule
+\textbf{const}   &       20.972       &       3.7287       &      5.6245     &      0.0000      &       13.654      &       28.289       \\
+\textbf{TC}      &      -0.0065       &       0.0007       &     -8.6717     &      0.0000      &      -0.0080      &      -0.0050       \\
+\textbf{TTS}     &      -0.0067       &       0.0018       &     -3.6070     &      0.0003      &      -0.0103      &      -0.0030       \\
+\textbf{GDP}     &       0.2935       &       0.1140       &      2.5738     &      0.0102      &       0.0697      &       0.5173       \\
+\textbf{POP}     &      -2.9879       &       0.5302       &     -5.6350     &      0.0000      &      -4.0284      &      -1.9473       \\
+\textbf{open}    &       0.1438       &       0.0402       &      3.5752     &      0.0004      &       0.0649      &       0.2228       \\
+\textbf{science} &       0.2358       &       0.1461       &      1.6146     &      0.1067      &      -0.0508      &       0.5224       \\
+\textbf{WGI}     &       0.1960       &       0.0818       &      2.3973     &      0.0167      &       0.0356      &       0.3565       \\
+\textbf{patent}  &       0.9307       &       0.0695       &      13.400     &      0.0000      &       0.7944      &       1.0670       \\
+\bottomrule
+\end{tabular}
+%\caption{PanelOLS Estimation Summary}
+\end{center}
+
+F-test for Poolability: 32.660 \newline
+ P-value: 0.0000 \newline
+ Distribution: F(142,952) \newline
+  \newline
+ Included effects: Entity\section*{Model Comparison}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+                                 &  \textbf{FE}   &    \textbf{RE}    & \textbf{Pooled}  \\
+\midrule
+\textbf{Dep. Variable}           &      sem       &        sem        &       sem        \\
+\textbf{Estimator}               &    PanelOLS    &   RandomEffects   &    PooledOLS     \\
+\textbf{No. Observations}        &      1103      &        1103       &       1103       \\
+\textbf{Cov. Est.}               &   Unadjusted   &     Unadjusted    &    Unadjusted    \\
+\textbf{R-squared}               &     0.3921     &       0.5289      &      0.8354      \\
+\textbf{R-Squared (Within)}      &     0.3921     &       0.3579      &      0.2481      \\
+\textbf{R-Squared (Between)}     &    -6.2306     &       0.8450      &      0.8689      \\
+\textbf{R-Squared (Overall)}     &    -5.6299     &       0.8151      &      0.8354      \\
+\textbf{F-statistic}             &     76.751     &       122.61      &      554.26      \\
+\textbf{P-value (F-stat)}        &     0.0000     &       0.0000      &      0.0000      \\
+\textbf{=====================}   &  ============  &  ===============  &   ============   \\
+\textbf{const}                   &     20.972     &      -2.4339      &     -3.7731      \\
+\textbf{ }                       &    (5.6245)    &     (-2.8415)     &    (-5.5065)     \\
+\textbf{TC}                      &    -0.0065     &      -0.0054      &     -0.0056      \\
+\textbf{ }                       &   (-8.6717)    &     (-7.2164)     &    (-3.6404)     \\
+\textbf{TTS}                     &    -0.0067     &      -0.0059      &     -0.0065      \\
+\textbf{ }                       &   (-3.6070)    &     (-3.0882)     &    (-1.6255)     \\
+\textbf{GDP}                     &     0.2935     &       0.5402      &      0.5463      \\
+\textbf{ }                       &    (2.5738)    &      (7.5859)     &     (13.298)     \\
+\textbf{POP}                     &    -2.9879     &       0.5408      &      0.5562      \\
+\textbf{ }                       &   (-5.6350)    &      (6.3255)     &     (11.784)     \\
+\textbf{open}                    &     0.1438     &       0.1929      &      0.2462      \\
+\textbf{ }                       &    (3.5752)    &      (5.3137)     &     (8.6531)     \\
+\textbf{science}                 &     0.2358     &       0.4464      &      2.0881      \\
+\textbf{ }                       &    (1.6146)    &      (3.1182)     &     (13.180)     \\
+\textbf{WGI}                     &     0.1960     &       0.2266      &      0.1410      \\
+\textbf{ }                       &    (2.3973)    &      (4.4550)     &     (4.7231)     \\
+\textbf{patent}                  &     0.9307     &       0.6417      &      0.6643      \\
+\textbf{ }                       &    (13.400)    &      (11.201)     &     (5.6331)     \\
+\textbf{DIS}                     &                &      -0.7291      &     -0.5068      \\
+\textbf{ }                       &                &     (-4.5547)     &    (-7.8895)     \\
+\textbf{RTA}                     &                &       0.2682      &      0.1661      \\
+\textbf{ }                       &                &      (2.7086)     &     (4.2297)     \\
+\textbf{=======================} & ============== & ================= &  ==============  \\
+\textbf{Effects}                 &     Entity     &                   &                  \\
+\bottomrule
+\end{tabular}
+%\caption{Model Comparison}
+\end{center}
+
+T-stats reported in parentheses\section*{Hausman Test Results}
+Hausman test statistic: nan\\
+p-value: nan\\
+Fail to reject null hypothesis: Random effects model is preferred.
+\end{document}
