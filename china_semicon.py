@@ -42,7 +42,7 @@ X = semdf[
         "TC",
     ]
 ]
-correlation_matrix = X.corr()
+correlation_matrix = X.corr()  # Compute the correlation matrix
 print(correlation_matrix)
 
 # %%
