@@ -9,11 +9,11 @@ from scipy import stats
 
 # %%
 df = pd.read_excel("/Users/eer/Documents/python/data/DAIZIHAN  DATA.xlsx")
-df = df.dropna()
+semdf = df.dropna()
 
 # %%
 # Perform VIF test on "GDP POP WGI patent TTS science open DIS RTA TC"
-X = df[["GDP", "POP", "WGI", "patent", "TTS", "science", "open", "DIS", "RTA", "TC"]]
+X = semdf[["GDP", "POP", "WGI", "patent", "TTS", "science", "open", "DIS", "RTA", "TC"]]
 # VIF dataframe
 vif_data = pd.DataFrame()
 vif_data["feature"] = X.columns
@@ -25,7 +25,7 @@ print(vif_data)
 
 # %%
 # Perform the correlation analysis on X
-X = df[
+X = semdf[
     [
         "sem",
         "IC",
@@ -50,9 +50,9 @@ print(correlation_matrix)
 # sem on TC, TTS, GDP, DIS, POP, open, science, WGI, patent, RTA, oecd
 # with fixed and random effect, as well as pooled ols method
 # Create a panel data structure with 'Country' and 'Year' as index
-years = pd.to_datetime(df["years"], errors="coerce")
-ID = pd.Categorical(df["ID"])
-df = df.set_index(["ID", "years"])
+years = pd.to_datetime(semdf["years"], errors="coerce")
+ID = pd.Categorical(semdf["ID"])
+df = semdf.set_index(["ID", "years"])
 df["years"] = years
 df["ID"] = ID
 exog_vars = [
@@ -71,15 +71,15 @@ exog = sm.add_constant(df[exog_vars])
 # Random Effects Regression
 re_model = RandomEffects(df["sem"], exog)
 re_results = re_model.fit()
-print(re_results)
+# print(re_results)
 # Pooled OLS Regression
 pooled_model = PooledOLS(df["sem"], exog)
 pooled_results = pooled_model.fit()
-print(pooled_results)
+# print(pooled_results)
 # Fixed Effects (Within) Regression
 fe_model = PanelOLS(df["sem"], exog, entity_effects=True, drop_absorbed=True)
 fe_results = fe_model.fit()
-print(fe_results)
+# print(fe_results)
 # Compare the models using linearmodels.panel.compare
 print(compare({"FE": fe_results, "RE": re_results, "Pooled": pooled_results}))
 
@@ -135,3 +135,89 @@ else:
 #     else:
 #         f.write("Fail to reject null hypothesis: Random effects model is preferred.\n")
 #     f.write("\\end{document}\n")
+
+# %%
+# Run Panel regression the variable,
+# IC on TC, TTS, GDP, DIS, POP, open, science, WGI, patent, RTA, oecd
+# with fixed and random effect, as well as pooled ols method
+# Create a panel data structure with 'Country' and 'Year' as index
+years = pd.to_datetime(semdf["years"], errors="coerce")
+ID = pd.Categorical(semdf["ID"])
+df = semdf.set_index(["ID", "years"])
+df["years"] = years
+df["ID"] = ID
+exog_vars = [
+    "TC",
+    "TTS",
+    "GDP",
+    "DIS",
+    "POP",
+    "open",
+    "science",
+    "WGI",
+    "patent",
+    "RTA",
+]
+exog = sm.add_constant(df[exog_vars])
+# Random Effects Regression
+re_model = RandomEffects(df["IC"], exog)
+re_results = re_model.fit()
+# print(re_results)
+# Pooled OLS Regression
+pooled_model = PooledOLS(df["IC"], exog)
+pooled_results = pooled_model.fit()
+# print(pooled_results)
+# Fixed Effects (Within) Regression
+fe_model = PanelOLS(df["IC"], exog, entity_effects=True, drop_absorbed=True)
+fe_results = fe_model.fit()
+# print(fe_results)
+# Compare the models using linearmodels.panel.compare
+print(compare({"FE": fe_results, "RE": re_results, "Pooled": pooled_results}))
+
+# %%
+# Run Panel regression the variable,
+# IC on TC, TTS, GDP, DIS, POP, open, science, WGI, patent, RTA, oecd
+# with fixed and random effect, as well as pooled ols method
+# Create a panel data structure with 'Country' and 'Year' as index
+years = pd.to_datetime(semdf["years"], errors="coerce")
+ID = pd.Categorical(semdf["ID"])
+df = semdf.set_index(["ID", "years"])
+df["years"] = years
+df["ID"] = ID
+exog_vars = [
+    "TC",
+    "TTS",
+    "GDP",
+    "DIS",
+    "POP",
+    "open",
+    "science",
+    "WGI",
+    "patent",
+    "RTA",
+]
+exog = sm.add_constant(df[exog_vars])
+# Random Effects Regression
+re_model = RandomEffects(df["DOS"], exog)
+re_results = re_model.fit()
+# print(re_results)
+# Pooled OLS Regression
+pooled_model = PooledOLS(df["DOS"], exog)
+pooled_results = pooled_model.fit()
+# print(pooled_results)
+# Fixed Effects (Within) Regression
+fe_model = PanelOLS(df["DOS"], exog, entity_effects=True, drop_absorbed=True)
+fe_results = fe_model.fit()
+# print(fe_results)
+# Compare the models using linearmodels.panel.compare
+print(compare({"FE": fe_results, "RE": re_results, "Pooled": pooled_results}))
+
+# %%
+lm_model = smf.mixedlm(
+    "DOS ~ TC + TTS + GDP + DIS + POP + open + science + WGI + patent + RTA",
+    data=semdf,
+    groups=semdf["ID"],
+    re_formula="~1",
+)
+lm_results = lm_model.fit()
+print(lm_results.summary())
