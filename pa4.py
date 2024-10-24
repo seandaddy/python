@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN, KMeans, SpectralClustering
 from sklearn.mixture import GaussianMixture
 
-gravity = pd.read_csv('/Users/eer/Downloads/gravity80.csv')
+gravity = pd.read_csv('/Users/eer/Documents/python/data/gravity80.csv')
 
 df = gravity
 df['trade'] = df['tradeflow_comtrade_o'] + df['tradeflow_comtrade_d']
