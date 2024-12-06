@@ -1,0 +1,36 @@
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:              d_Export1   R-squared:                        0.1836
+Estimator:                   PanelOLS   R-squared (Between):              0.7760
+No. Observations:                 455   R-squared (Within):              -0.0380
+Date:                Mon, Nov 18 2024   R-squared (Overall):              0.1540
+Time:                        15:49:10   Log-likelihood                   -6568.5
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      16.644
+Entities:                          91   P-value                           0.0000
+Avg Obs:                       5.0000   Distribution:                   F(6,444)
+Min Obs:                       5.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             18.658
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                   F(6,444)
+Avg Obs:                       91.000                                           
+Min Obs:                       91.000                                           
+Max Obs:                       91.000                                           
+                                                                                
+                              Parameter Estimates                               
+================================================================================
+              Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+--------------------------------------------------------------------------------
+Export1_lag1     0.0480     0.0113     4.2573     0.0000      0.0258      0.0702
+GDP1            -0.0326     0.0357    -0.9110     0.3628     -0.1028      0.0377
+Cases1           0.0221     0.0271     0.8154     0.4153     -0.0311      0.0753
+Rta              5094.3  1.795e+04     0.2838     0.7767  -3.018e+04   4.037e+04
+Strict1          626.43     679.99     0.9212     0.3574     -709.96      1962.8
+Dist1            2.2011     3.3405     0.6589     0.5103     -4.3641      8.7663
+================================================================================
+
+F-test for Poolability: 9.5015
+P-value: 0.0000
+Distribution: F(4,444)
+
+Included effects: Time

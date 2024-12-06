@@ -1,0 +1,34 @@
+xtset code year
+
+winsor2 Roa LnSub LnTax LnRD Cash Lev Lnsize Top1 CSR Efficiency, replace cuts(1 99)
+
+outreg2 using 기초통계.doc, replace sum(log) title(Decriptive statistics)
+
+logout, save(상관관계분석) word replace: pwcorr_a LnRD LnTax LnSub Roa Cash Age Lev Lnsize Top1 SOE CSR Efficiency , star1(.01) star5(.05) star10(.1)
+
+reg LnRD LnTax LnSub Roa Cash Age Lev Lnsize Top1 SOE CSR Efficiency
+
+estat vif
+
+----------------------------------------------------
+xtreg Roa LnSub LnTax LnRD Cash Age Lev Lnsize Top1 SOE CSR Efficiency, fe
+
+outreg2 using 모형1.doc, word
+
+xtreg LnRD LnSub LnTax Roa Cash Age Lev Lnsize Top1 SOE CSR Efficiency, fe
+
+outreg2 using 모형2.doc, word
+
+
+
+xtreg Roa LnSub LnTax LnRD Cash Age Lev Lnsize Top1 SOE CSR Efficiency  if SOE == 0, fe 
+outreg2 using 민영_모형1.doc, word
+
+xtreg Roa LnSub LnTax LnRD Cash Age Lev Lnsize Top1 SOE CSR Efficiency  if SOE == 1, fe 
+outreg2 using 국영_모형1.doc, word
+
+xtreg LnRD LnSub LnTax Roa Cash Age Lev Lnsize Top1 SOE CSR Efficiency if SOE == 0, fe 
+outreg2 using 민영_모형2.doc, word
+
+xtreg LnRD LnSub LnTax Roa Cash Age Lev Lnsize Top1 SOE CSR Efficiency if SOE == 1, fe  
+outreg2 using 국영_모형2.doc, word
